@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/views/dashboard/dashboard.css" />
+    <link rel="stylesheet" href="/views/toast/toast.css" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div>
+      <div id="navbar-container"></div>
+      <section class="hero">
+        <h1>Teile deine Fahrt</h1>
+        <p>
+          Finde Mitfahrgelegenheiten, spare Kosten und lerne neue Leute kennen!
+        </p>
+        <button class="btn-primary" onclick="window.location.href = '/rides'">
+          Jetzt Fahrt anbieten
+        </button>
+      </section>
+
+      <section class="messages-section">
+        <h2>Nachrichten</h2>
+        <p>Hier findest du alle Neuigkeiten, Anfragen und Mitteilungen.</p>
+        <button
+          class="btn-secondary"
+          onclick="window.location.href = '/messages'"
+        >
+          Zu den Nachrichten
+        </button>
+      </section>
+
+      <section class="profile-section">
+        <h2>Profil verwalten</h2>
+        <p>
+          Halte deine persönlichen Daten aktuell, um mehr Vertrauen bei anderen
+          Nutzern zu schaffen.
+        </p>
+        <button
+          class="btn-secondary"
+          onclick="window.location.href = '/user-interface'"
+        >
+          Profil ansehen
+        </button>
+      </section>
+      <div id="footer-container"></div>
+    </div>
+    <script src="/views/dashboard/dashboard.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>

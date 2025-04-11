@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil</title>
+    <link rel="stylesheet" href="/views/user-interface/user-interface.css" />
+    <link rel="stylesheet" href="/views/toast/toast.css" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div>
+      <div id="navbar-container"></div>
+      <div id="center">
+        <div class="container">
+          <div class="profile-section">
+            <div id="profileImage"></div>
+            <span>Profil</span>
+            <br />
+            <button class="btn" type="button" id="profileBtn">
+              Profil ändern
+            </button>
+            <button class="btn" type="button" id="passwordBtn">
+              Passwort ändern
+            </button>
+            <button class="btn" type="button" id="deleteBtn">
+              Benutzer löschen
+            </button>
+          </div>
+          <div class="form-section">
+            <h2 id="title"></h2>
+            <label>Username:</label>
+            <input id="username" type="text" placeholder="Username" minlength="3" maxlength="20" required />
+          
+            <label>Email:</label>
+            <input id="email" type="email" placeholder="Email" maxlength="254" required />
+          
+            <label>Vorname:</label>
+            <input id="firstname" type="text" placeholder="Vorname" minlength="2" maxlength="50" required />
+          
+            <label>Nachname:</label>
+            <input id="lastname" type="text" placeholder="Nachname" minlength="2" maxlength="50" required />
+          
+            <label>Telefonnummer:</label>
+            <input id="phonenumber" type="tel" placeholder="+491701234567 oder 0170-1234567" minlength="10" maxlength="15" required />
+          
+            <label>Straße:</label>
+            <input id="street" type="text" placeholder="Straße" minlength="3" maxlength="100" required />
+          
+            <label>Nr:</label>
+            <input id="house_number" type="text" placeholder="Nr." minlength="1" maxlength="10" required />
+          
+            <label>PLZ:</label>
+            <input id="postcode" type="text" placeholder="PLZ"  minlength="5" maxlength="5" required />
+          
+            <label>Ort:</label>
+            <input id="city" type="text" placeholder="Ort" minlength="2" maxlength="100" required />
+            <button class="btn" type="button" id="changeBtn">Ändern</button>
+          </div>
+        </div>
+      </div>
+      <div id="footer-container"></div>
+    </div>
+    <script
+      type="module"
+      src="/views/user-interface/user-interface.js"
+    ></script>
+    <script type="module" src="/views/dashboard/dashboard.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>

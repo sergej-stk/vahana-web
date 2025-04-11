@@ -1,0 +1,262 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+  box-sizing: border-box;
+  padding-top: 60px;
+  padding-bottom: 50px;
+}
+
+.container {
+  max-width: 900px;
+  width: 90%;
+  background: white;
+  padding: 30px;
+  margin: 20px auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 25px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 36px;
+  color: #5a3b18;
+  font-family: 'Kavoon', serif;
+  margin-bottom: 15px;
+}
+
+.description {
+  font-size: 18px;
+  color: #5a3b18;
+  margin-bottom: 30px;
+}
+
+.btn-create-ride {
+  padding: 12px 25px;
+  background-color: #5a3b18;
+  color: #f8e71c;
+  font-size: 18px;
+  border: none;
+  font-family: 'Kavoon', serif;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-create-ride:hover {
+  background-color: #4a2f13;
+}
+
+#ride-list {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.btn-join {
+  padding: 8px 15px;
+  background-color: #4a2f13;
+  color: #f8e71c;
+  font-family: 'Kavoon', serif;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-join:hover {
+  background-color: #4a2f13;
+  color: #dfcf20;
+}
+
+.btn-delete {
+  font-family: 'Kavoon', serif;
+  padding: 8px 15px;
+  background-color: #992a2a;
+  color: #f8e71c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+  background-color: #5a3b18;
+}
+
+.btn-edit {
+  font-family: 'Kavoon', serif;
+  padding: 8px 15px;
+  background-color: #4a2f13;
+  color: #f8e71c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-edit:hover {
+  background-color: #5a3b18;
+}
+
+#pagination {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#pagination button {
+  padding: 8px 12px;
+  background-color: #5a3b18;
+  color: #f8e71c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#pagination button:hover {
+  background-color: #4a2f13;
+  color: #dfcf20;
+}
+
+#pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#page-info {
+  font-size: 16px;
+}
+
+.ride-card {
+  background: #fff;
+  padding: 20px;
+  border-left: 5px solid #ffd700;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: box-shadow 0.3s ease;
+  position: relative;
+}
+
+.ride-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.text-container {
+  flex: 1;
+  text-align: left;
+}
+
+.ride-card h2 {
+  margin: 0;
+  color: #5a3b18;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.ride-card p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border: 2px solid black;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 20px;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.filter-item {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.filter-item label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.filter-item input,
+.filter-item select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+#applyFilters {
+  align-self: center;
+  padding: 10px 20px;
+  background-color: #5a3b18;
+  color: #f8e71c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  font-family: 'Kavoon', serif;
+}
+
+#applyFilters:hover {
+  background-color: #4a2f13;
+}
+
+.status-field {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #f7f2f2;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 10px;
+  color: #5a3b18;
+  font-weight: bold;
+  z-index: 1;
+  display: inline-block;
+}

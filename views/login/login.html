@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/views/login/login.css" />
+    <link rel="stylesheet" href="/views/toast/toast.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-box">
+        <h1 class="title">Login</h1>
+        <form action="#" method="post">
+          <label for="email" class="label">E-Mail:</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            placeholder="E-Mail-Adresse"
+            required
+            maxlength="254"
+          />
+          <label for="password" class="label">Passwort:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Passwort"
+            required
+            maxlength="50"
+          />
+          <button type="button" class="btn-login" id="loginBtn">
+            Anmelden
+          </button>
+        </form>
+        <p id="message"></p>
+        <p>
+          <a href="/forget-password">Passwort vergessen?</a>
+        </p>
+        <p>
+          Du hast noch kein Konto?
+          <a href="/register">Registrieren</a>
+        </p>
+      </div>
+    </div>
+    <script type="module" src="/views/login/login.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>

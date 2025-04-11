@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fahrtdetails</title>
+    <link rel="stylesheet" href="/views/ride-overview/ride-detail.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet/dist/leaflet.css"
+      crossorigin=""
+    />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css"
+    integrity="sha256-cu3EeyAbdh7FZ58X4+oQz2g30Tw/U+3Utqmr1ETODqQ="
+    crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"
+    integrity="sha256-W+ggQ0MIhtG5LaUrBTtRqUFHT0m9MnTVJqej3K2Pz2A="
+    crossorigin=""></script>
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+    <main class="container">
+      <h1 class="title">Fahrtdetails</h1>
+      <div class="ride-info">
+        <p><strong>Ersteller:</strong> <span id="creator"></span></p>
+        <p><strong>Von:</strong> <span id="from"></span></p>
+        <p><strong>Nach:</strong> <span id="to"></span></p>
+        <p><strong>Datum:</strong> <span id="date"></span></p>
+        <p><strong>Uhrzeit:</strong> <span id="time"></span></p>
+        <p><strong>Freie Plätze:</strong> <span id="seats"></span></p>
+        <div id="participants-section" class="participants-section">
+          <h2>Teilnehmer</h2>
+          <div id="participants" class="participants-list"></div>
+        </div>
+      </div>
+      <div id="map"></div>
+      <button class="btn-back" id="btn-back">Zurück</button>
+      <button class="btn-join" id="btn-join">Beitreten</button>
+      <button class="btn-leave" id="btn-leave">Verlassen</button>
+    </main>
+    <div id="footer-container"></div>
+    <script type="module" src="/views/ride-overview/ride-detail.js"></script>
+    <script src="/app.js"></script>
+    <script src="/views/dashboard/dashboard.js"></script>
+  </body>
+</html>

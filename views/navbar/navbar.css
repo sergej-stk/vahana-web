@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffd700;
+  color: #5a3b18;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.navbar-left .logo {
+  width: 50px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.navbar-center {
+  text-align: left;
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.navTitle {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #5a3b18;
+  font-family: 'Kavoon', serif;
+  padding-right: 6%;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: #4a2f13;
+  font-weight: bold;
+  padding-right: 2%;
+}
+
+.navbar-right {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  cursor: pointer;
+  position: relative;
+}
+
+.icon svg {
+  width: 22px;
+  height: 22px;
+  fill: #5a3b18;
+  cursor: pointer;
+  transition: fill 0.2s ease;
+}
+
+.icon svg:hover {
+  fill: #4a2f13;
+}
+
+.iconLabel {
+  font-family: 'Kavoon', serif !important;
+  font-size: 10px;
+  color: #5a3b18;
+  text-align: center;
+  font-weight: 700;
+}
+
+.badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: bold;
+  display: none;
+}

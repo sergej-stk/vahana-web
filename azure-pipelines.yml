@@ -1,0 +1,90 @@
+# Pipeline für Web-Frontend
+
+# Build:
+#    Agent benötigt: -
+
+# Deploy:
+#    Agent benötigt:
+#    - Netzwerkverbindung zum Betriebs-Server (Verbindungsdaten in Service-Connection)
+#    - ssh-Client
+#    Betriebs-Server benötigt:
+#    - SSH-Server
+#    - nginx mit passender Konfiguration
+
+# Folgende Variablen anpassen!
+variables:
+  server_dir: '/home/user/www'
+  service_connection: 'Banana-VM'
+  agent_pool: 'Default'
+  environment_name: 'MyEnv'
+
+trigger:
+  - main
+
+stages:
+  - stage: 'Build_Stage'
+    jobs:
+      - job: 'Build_Job'
+        pool:
+          name: $(agent_pool)
+        steps:
+          # jar-File in Staging-Directory kopieren
+          - task: CopyFiles@2
+            displayName: 'copy files to ArtifactStagingDirectory'
+            inputs:
+              SourceFolder: '$(System.DefaultWorkingDirectory)'
+              Contents: |
+                **/*.html
+                **/*.js
+                **/*.css
+                **/*.svg
+                **/*.png
+                **/*.gif
+                **/*.webp
+                **/*.ico
+              TargetFolder: '$(Build.ArtifactStagingDirectory)'
+              CleanTargetFolder: true
+          # Inhalt des Staging-Directory im Drop-Ordner in der Cloud veröffentlichen
+          - task: PublishBuildArtifacts@1
+            displayName: 'publish artifact to drop'
+
+  - stage: 'Deploy_Stage'
+    dependsOn: 'Build_Stage'
+    jobs:
+      - deployment: 'Deploy_Job'
+        environment: '$(environment_name)'
+        pool:
+          name: '$(agent_pool)'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                # alte Dateien im drop-Ordner des Agents löschen
+                - task: DeleteFiles@1
+                  displayName: 'Delete drop files'
+                  inputs:
+                    SourceFolder: '$(Pipeline.Workspace)/drop'
+                    Contents: '*'
+                # Dateien vom drop-Ordner der Cloud in den drop-Ordner
+                # des Agenten herunterladen
+                - download: current
+                  artifact: drop
+                # Ziel-Ordner auf dem Betriebs-Server leeren
+                - task: SSH@0
+                  displayName: 'clean target folder on server'
+                  inputs:
+                    sshEndpoint: '$(service_connection)'
+                    runOptions: inline
+                    inline: |
+                      cd $(server_dir)
+                      rm -rf *
+                # Dateien des drop-Ordners (Agent) per SSH zum
+                # Betriebs-Server hochladen
+                - task: CopyFilesOverSSH@0
+                  displayName: 'upload to server'
+                  inputs:
+                    sshEndpoint: $(service_connection)
+                    sourceFolder: '$(Pipeline.Workspace)/drop'
+                    targetFolder: '$(server_dir)'
+                    cleanTargetFolder: true
+                    cleanHiddenFilesInTarget: true

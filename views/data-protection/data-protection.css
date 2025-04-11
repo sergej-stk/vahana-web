@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
+
+body {
+  font-family: 'Kavoon', 'Arial Rounded MT Bold', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.content {
+  margin: 40px auto;
+  max-width: 500px;
+  width: 90%;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  border: 2px solid rgb(248, 231, 28);
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1,
+h2 {
+  /* ,
+p */
+  color: rgb(90, 59, 24);
+}
+
+@media (max-width: 600px) {
+  .content {
+    padding: 20px;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mitteilungsübersicht</title>
+    <link
+      rel="stylesheet"
+      href="/views/message-overview/message-overview.css"
+    />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div>
+      <div id="navbar-container"></div>
+      <main class="container">
+        <aside id="sidebar">
+          <div id="message-list"></div>
+        </aside>
+        <section id="content">
+          <h2>Mitteilung</h2>
+          <p id="message-content">
+            Bitte wählen Sie eine Mitteilung aus der Liste.
+          </p>
+        </section>
+      </main>
+      <div id="footer-container"></div>
+    </div>
+    <script
+      type="module"
+      src="/views/message-overview/message-overview.js"
+    ></script>
+    <script type="module" src="/views/dashboard/dashboard.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>

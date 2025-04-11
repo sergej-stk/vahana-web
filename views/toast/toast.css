@@ -1,0 +1,99 @@
+#toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.toast {
+  position: relative;
+  min-width: 250px;
+  margin-bottom: 10px;
+  padding: 15px;
+  padding-bottom: 25px;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #5a3b18;
+  font-family: 'Kavoon', serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: fadeIn 0.5s, fadeOut 0.5s 4.5s;
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+}
+
+.toast-icon {
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.toast-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.toast-message {
+  flex-grow: 1;
+  font-size: 16px;
+}
+
+.toast.success {
+  border-left: 5px solid #ffd700;
+}
+
+.toast.error {
+  border-left: 5px solid #dc3545;
+}
+
+.toast-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  animation: progressBar 5s linear forwards;
+}
+
+.toast.success .toast-progress {
+  background: #ffd700;
+}
+
+.toast.error .toast-progress {
+  background: #dc3545;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes progressBar {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}

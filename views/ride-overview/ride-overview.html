@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mitfahrzentrale - Fahrten</title>
+    <link rel="stylesheet" href="/views/ride-overview/ride-overview.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div>
+      <div id="navbar-container"></div>
+      <main class="container">
+        <h1 class="title">Mitfahrzentrale</h1>
+        <p class="description">
+          Finde Fahrten, die zu deinem Ziel führen oder erstelle deine eigene
+          Fahrt.
+        </p>
+
+        <div class="filter-container">
+          <div class="filter-row">
+            <div class="filter-item">
+              <label for="origincity">Startort:</label>
+              <input
+                type="text"
+                id="origincity"
+                placeholder="Startort eingeben"
+              />
+            </div>
+            <div class="filter-item">
+              <label for="destinationcity">Zielort:</label>
+              <input
+                type="text"
+                id="destinationcity"
+                placeholder="Zielort eingeben"
+              />
+            </div>
+            <div class="filter-item">
+              <label for="username">Fahrer:</label>
+              <input
+                type="text"
+                id="username"
+                placeholder="Fahrername eingeben"
+              />
+            </div>
+          </div>
+
+          <div class="filter-row">
+            <div class="filter-item">
+              <label for="sortby">Sortieren nach:</label>
+              <select id="sortby">
+                <option value="departure">Abfahrt</option>
+                <option value="created">Erstellt</option>
+              </select>
+            </div>
+            <div class="filter-item">
+              <label for="sortdirection">Richtung:</label>
+              <select id="sortdirection">
+                <option value="ASC">Aufsteigend</option>
+                <option value="DESC" selected>Absteigend</option>
+              </select>
+            </div>
+            <div class="filter-item">
+              <label for="status">Status:</label>
+              <select id="status">
+                <option value="NONE">Alle fahrten</option>
+                <option value="PLANNED">Geplant</option>
+                <option value="CANCELED">Storniert</option>
+                <option value="COMPLETED">Abgeschlossen</option>
+                <option value="ACTIVE" selected>Aktiv</option>
+              </select>
+            </div>
+          </div>
+
+          <button id="applyFilters">Filter anwenden</button>
+        </div>
+
+        <button class="btn-create-ride" id="createRide">Fahrt erstellen</button>
+
+        <div id="ride-list"></div>
+
+        <div id="pagination">
+          <button id="prev-page" onclick="prevPage()">&lt;</button>
+          <span id="page-info"></span>
+          <button id="next-page" onclick="nextPage()">&gt;</button>
+        </div>
+      </main>
+
+      <div id="footer-container"></div>
+    </div>
+    <script src="/views/dashboard/dashboard.js"></script>
+    <script type="module" src="/views/ride-overview/ride-overview.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>

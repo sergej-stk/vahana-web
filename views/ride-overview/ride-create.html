@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fahrt erstellen</title>
+    <link rel="stylesheet" href="/views/ride-overview/ride-create.css" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div>
+      <div id="navbar-container"></div>
+      <div class="container">
+        <svg
+          class="back-arrow"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+          onclick="window.location.href = '/rides'"
+        >
+          <path
+            d="M177.5 414c-8.8 3.8-19 2-26-4.6l-144-136C2.7 268.9 0 262.6 0 256s2.7-12.9 7.5-17.4l144-136c7-6.6 17.2-8.4 26-4.6s14.5 12.5 14.5 22l0 72 288 0c17.7 0 32 14.3 32 32l0 64c0 17.7-14.3 32-32 32l-288 0 0 72c0 9.6-5.7 18.2-14.5 22z"
+          />
+        </svg>
+        <h1>Fahrt erstellen</h1>
+
+        <div class="info-block">
+          <h2>Start der Fahrt</h2>
+          <div class="form-group">
+            <label>Straße</label>
+            <input type="text" id="start-street" maxlength="100" />
+          </div>
+          <div class="form-group">
+            <label>Hausnummer</label>
+            <input type="text" id="start-house-number" maxlength="10" />
+          </div>
+          <div class="form-group">
+            <label>Postleitzahl</label>
+            <input
+              type="text"
+              id="start-postal-code"
+              minlength="5"
+              maxlength="5"
+            />
+          </div>
+          <div class="form-group">
+            <label>Stadt</label>
+            <input type="text" id="start-city" maxlength="50" />
+          </div>
+          <div class="form-group">
+            <label>Land</label>
+            <input type="text" id="start-country" maxlength="50" />
+          </div>
+        </div>
+
+        <div class="info-block">
+          <h2>Ziel der Fahrt</h2>
+          <div class="form-group">
+            <label>Straße</label>
+            <input type="text" id="destination-street" maxlength="100" />
+          </div>
+          <div class="form-group">
+            <label>Hausnummer</label>
+            <input type="text" id="destination-house-number" maxlength="10" />
+          </div>
+          <div class="form-group">
+            <label>Postleitzahl</label>
+            <input
+              type="text"
+              id="destination-postal-code"
+              minlength="5"
+              maxlength="5"
+            />
+          </div>
+          <div class="form-group">
+            <label>Stadt</label>
+            <input type="text" id="destination-city" maxlength="50" />
+          </div>
+          <div class="form-group">
+            <label>Land</label>
+            <input type="text" id="destination-country" maxlength="50" />
+          </div>
+        </div>
+
+        <div class="info-block">
+          <h2>Zusätzliche Informationen</h2>
+          <div class="form-group">
+            <label>Wann fährst du los?</label>
+            <input type="datetime-local" id="departure-time" />
+          </div>
+          <div class="form-group">
+            <label>Wie viele Plätze stehen zur Verfügung?</label>
+            <input type="number" id="input-seats" min="1" max="10" value="1" />
+          </div>
+          <button class="button" id="createBtn">Erstellen</button>
+        </div>
+      </div>
+      <div id="footer-container"></div>
+    </div>
+    <script src="/views/dashboard/dashboard.js"></script>
+    <script type="module" src="/views/ride-overview/ride-create.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
